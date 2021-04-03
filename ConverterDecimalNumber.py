@@ -74,6 +74,41 @@ def decimal_type():
         return True
     elif action == 4:
         return False
+    print('\n' * 20)
+
+
+def from_binary_to_decimal(binary):
+    value = 0
+    index = 1
+    word_len = len(binary)
+    for bit in binary:
+        value += int(bit)*2**(word_len - index)
+        index += 1
+    return value
+
+
+def binary_type():
+    value = input('Wprowadź wartość:')
+    print('1. Podana liczba na kod dziesiętny')
+    print('2. Podana liczba na kod ósemkowy')
+    print('3. Podana liczba na kod szesnastkowy')
+    print('4. Zakończ program')
+    action = int(input('Którą akcję wybierasz? :'))
+    if action == 1:
+        result = from_binary_to_decimal(value)
+        print('Liczba {} w postaci dziesiętnej: {}'.format(value, result))
+        return True
+    elif action == 2:
+        print("Narazie niedostępne. Pracujemy nad tą opcją :)")
+        return True
+    elif action == 3:
+        print("Narazie niedostępne. Pracujemy nad tą opcją :)")
+        return True
+    elif action == 4:
+        return False
+    print('\n' * 20)
+
+
 
 
 def which_type_input(type):
@@ -81,7 +116,7 @@ def which_type_input(type):
     if type == "1":
         process = decimal_type()
     elif type == "2":
-        print("Narazie niedostępne. Pracujemy nad tą opcją :)")
+        process = binary_type()
     elif type == "3":
         print("Narazie niedostępne. Pracujemy nad tą opcją :)")
     elif type == "4":
